@@ -1,11 +1,27 @@
 # 🎧 SpotiFly — Gaming & Fullscreen Spotify Overlay Widget
 
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6?style=for-the-badge&logo=windows)
+![Installer](https://img.shields.io/badge/Kurulum-SpotiFly--Setup--v1.0.exe-1DB954?style=for-the-badge&logo=windows-terminal)
 ![Electron](https://img.shields.io/badge/Electron-33-47848F?style=for-the-badge&logo=electron)
-![Spotify](https://img.shields.io/badge/Spotify-Control%20%2B%20API-1DB954?style=for-the-badge&logo=spotify)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 **SpotiFly**, oyun oynarken veya tam ekran bir uygulama kullanırken `Alt + Tab` yapıp ekran değiştirmeye gerek kalmadan Spotify'ı kısayollarla kontrol etmenizi sağlayan, **odağı çalmayan (`WS_EX_NOACTIVATE`)** gelişmiş bir masaüstü overlay widget'ıdır.
+
+---
+
+## 📥 İndirme ve Kurulum (`SpotiFly-Setup-v1.0.exe`)
+
+Hiçbir ek paket, Node.js veya kod bilgisi gerekmeden doğrudan kurup kullanmak için:
+
+1. Sağ taraftaki **[Releases](../../releases/latest)** bölümüne gidin.
+2. **`SpotiFly-Setup-v1.0.exe`** kurulum dosyasını indirin ve çift tıklayarak çalıştırın.
+3. Açılan **SpotiFly Kurulum Sihirbazı** üzerinden:
+   - ☑️ **Başlat Menüsüne Ekle** *(Windows Arama'da "SpotiFly" yazdığınızda doğrudan çıkar)*
+   - ☑️ **Masaüstü Kısayolu Oluştur**
+   - ☑️ **Bilgisayar Açıldığında Arka Planda Otomatik Başlat** *(İsteğe bağlı)*
+   seçeneklerini belirleyip **Kurulumu Başlat** butonuna tıklamanız yeterlidir!
+
+> 💡 Uygulama `%LOCALAPPDATA%\Programs\SpotiFly` dizinine kurulur ve Windows **Yüklü Uygulamalar (Program Ekle/Kaldır)** listesine otomatik kaydedilir.
 
 ---
 
@@ -13,8 +29,8 @@
 
 - 🛡️ **Oyunu Alta Düşürmeyen Mimari (`WS_EX_NOACTIVATE` + Sıfır Kesinti Gizleme):**
   Widget'ı kısayolla gizleyip açtığınızda veya üzerindeki butonlara fareyle tıkladığınızda arkadaki tam ekran oyun odağını kaybetmez ve görev çubuğuna düşmez.
-- ⚡ **Sıfır Gecikmeli Windows Media Session:**
-  Hiçbir API anahtarı gerektirmeden bilgisayarda çalan Spotify şarkısını, albüm kapağını, süresini ve çalma durumunu doğrudan okur ve kontrol eder.
+- ⚡ **Sıfır Gecikmeli Windows Media Session & Donanım Tuş Dinleyicisi (`GetAsyncKeyState`):**
+  Hiçbir API anahtarı gerektirmeden bilgisayarda çalan Spotify şarkısını, albüm kapağını, süresini ve çalma durumunu doğrudan okur. Tam ekran oyunların kısayol engellemelerine takılmaz.
 - 🔊 **Sadece Spotify Sesini Değiştiren Mikser (CoreAudio):**
   Widget üzerindeki ses çubuğu Windows CoreAudio üzerinden **yalnızca `Spotify.exe` sesini** kısar veya açar; oyununuzun ses seviyesine dokunmaz.
 - 👻 **Hayalet HUD Modu (Click-Through):**
@@ -37,31 +53,7 @@
 | **Hayalet HUD (Click-Through)** | `Alt + G` | `F11` |
 | **Şarkıyı Beğen (♥)** | `Alt + L` | `Alt + L` |
 
-> 💡 Tüm kısayolları widget'ın sağ üst köşesindeki **⚙️ Kısayollar** butonuna tıklayarak dilediğiniz tuşa atayabilirsiniz.
-
----
-
-## 🚀 Kurulum ve Çalıştırma
-
-### Gereksinimler
-- **Windows 10 / 11**
-- **Node.js** (v18 veya üzeri)
-
-### Adımlar
-
-```bash
-# 1. Repoyu klonlayın
-git clone https://github.com/KULLANICI_ADINIZ/spotifly-overlay.git
-cd spotifly-overlay
-
-# 2. Bağımlılıkları yükleyin
-npm install
-
-# 3. Uygulamayı başlatın
-npm start
-```
-
-Windows üzerinde terminal açmadan doğrudan **`Baslat-SpotiFly.bat`** dosyasına çift tıklayarak da başlatabilirsiniz.
+> 💡 Tüm kısayolları widget'ın sağ üst köşesindeki **⚙️ Kısayollar** butonuna tıklayarak dilediğiniz tuşa veya kombinasyona atayabilirsiniz.
 
 ---
 
@@ -78,6 +70,19 @@ Temel medya kontrolleri, şarkı arama, albüm kapağı ve Spotify ses kontrolü
 
 ---
 
+## 🛠️ Kaynak Koddan Geliştirme (Geliştiriciler İçin)
+
+Projeyi kaynak koddan çalıştırmak veya geliştirmek isterseniz:
+
+```bash
+git clone https://github.com/KULLANICI_ADINIZ/spotifly-overlay.git
+cd spotifly-overlay
+npm install
+npm start
+```
+
+---
+
 ## 📄 Lisans
 
-Bu proje **MIT Lisansı** altında lisanslanmıştır.
+Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
