@@ -1,0 +1,20 @@
+{
+  "name": "spotifly-overlay",
+  "version": "1.0.0",
+  "description": "Oyun ve tam ekran uygulamalar için kısayolla açılan gelişmiş Spotify Overlay Widget",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "spotify",
+    "overlay",
+    "widget",
+    "gaming",
+    "windows"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}
